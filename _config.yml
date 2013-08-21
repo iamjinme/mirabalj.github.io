@@ -2,24 +2,36 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://mirabalj.github.io
+title: El blog de Jinme
+subtitle: Compartiendo ideas libres.
+author: Jinme
 simple_search: http://google.com/search
-description:
+description: Un blog sobre Tecnología, Desarrollo Móvil, Emprendimiento e innovación
+keywords: software libre, tecnologia, movil, programacion, php, yii, development, opensource, cpp, entrepreneur, innovation, database, nosql, travel, ideas
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
-date_format: "ordinal"
+date_format: "%b %d, %Y"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
+
+# ---------------------- #
+#      Menu Config       #
+# ---------------------- #
+navigation:
+- text: Inicio
+  url: /index.html
+- text: Artículos
+  url: /blog/archives
+- text: Acerca de
+  url: http://about.me/mirabalj
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -63,13 +75,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: mirabalj
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: mirabalj
 twitter_tweet_button: true
 
 # Google +1
@@ -78,7 +90,7 @@ google_plus_one_size: medium
 
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
-googleplus_user:
+googleplus_user: 100924816002367275440
 googleplus_hidden: false
 
 # Pinboard
@@ -90,7 +102,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: mirabalj
 disqus_show_comment_count: false
 
 # Google Analytics

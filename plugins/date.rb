@@ -1,6 +1,23 @@
 module Octopress
   module Date
 
+  MONTHNAMES_TR = [nil,
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+  ]
+  ABBR_MONTHNAMES_TR = [nil,
+    "Ene", "Feb", "Mar", "Abr", "May", "Jun",
+    "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"
+  ]
+  DAYNAMES_TR = [
+    "Domingo", "Lunes", "Martes", "Mi&eacute;rcoles",
+    "Jueves", "Viernes", "S&aacute;bado"
+  ]
+  ABBR_DAYNAMES_TR = [
+    "Dom", "Lun", "Mar", "Mi&eacute;",
+    "Jue", "Vie", "S&aacute;b"
+  ]
+
     # Returns a datetime if the input is a string
     def datetime(date)
       if date.class == String
@@ -29,6 +46,11 @@ module Octopress
       end
     end
 
+	# Return the date for archives
+	def format_date_archive(date)
+		"<span class='month'>#{ABBR_MONTHNAMES_TR[date.mon]}</span> <span class='day'>#{date.day}</span> <span class='year'><!--%Y--></span>"
+	end
+
     # Formats date either as ordinal or by given date format
     # Adds %o as ordinal representation of the day
     def format_date(date, format)
@@ -36,8 +58,11 @@ module Octopress
       if format.nil? || format.empty? || format == "ordinal"
         date_formatted = ordinalize(date)
       else
-        date_formatted = date.strftime(format)
-        date_formatted.gsub!(/%o/, ordinal(date.strftime('%e').to_i))
+        date_formatted = format.gsub(/%a/, ABBR_DAYNAMES_TR[date.wday])
+        date_formatted = date_formatted.gsub(/%A/, DAYNAMES_TR[date.wday])
+        date_formatted = date_formatted.gsub(/%b/, ABBR_MONTHNAMES_TR[date.mon])
+        date_formatted = date_formatted.gsub(/%B/, MONTHNAMES_TR[date.mon])
+        date_formatted = date.strftime(date_formatted)
       end
       date_formatted
     end
@@ -62,6 +87,7 @@ module Jekyll
         "date"              => self.date,
         # Monkey patch
         "date_formatted"    => format_date(self.date, date_format),
+        "date_archive"      => format_date_archive(self.date),
         "updated_formatted" => self.data.has_key?('updated') ? format_date(self.data['updated'], date_format) : nil,
         "id"                => self.id,
         "categories"        => self.categories,
