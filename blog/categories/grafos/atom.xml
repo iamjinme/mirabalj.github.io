@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: grafos | Jinme: compartiendo ideas libres]]></title>
+  <link href="http://blog.jinme.org/blog/categories/grafos/atom.xml" rel="self"/>
+  <link href="http://blog.jinme.org/"/>
+  <updated>2013-08-21T12:55:13-04:30</updated>
+  <id>http://blog.jinme.org/</id>
+  <author>
+    <name><![CDATA[Jinme]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Neo4j en 3 pasos]]></title>
+    <link href="http://blog.jinme.org/blog/2013/08/21/neo4j-en-3-pasos/"/>
+    <updated>2013-08-21T12:04:00-04:30</updated>
+    <id>http://blog.jinme.org/blog/2013/08/21/neo4j-en-3-pasos</id>
+    <content type="html"><![CDATA[<p><strong>No todo es SQL</strong>. De hecho existen unas joyas de bases de datos como <a href="http://www.neo4j.org/">Neo4j</a>: NoSQL y orientada a grafos.
+Parece complicado pero no lo es; de hecho <a href="http://es.wikipedia.org/wiki/NoSQL">NOSQL</a> es un reciente paradigma en el ámbito de las bases de datos.
+Para entender mejor que son bases de datos orientadas a grafos Ian Robinson <em>(director de Neo Technology)</em> lo explica en éste vídeo, luego la guía para instalar <strong>Neo4j</strong>.</p>
+
+<!--more-->
+
+
+<p><video width='640' height='259' preload='none' controls poster=''><source src='https://player.vimeo.com/video/56043918#t=0m19s">https://player.vimeo.com/video/56043918#t=0m19s</a>' ></video></p>
+
+<h2>Guía de instalación</h2>
+
+<p>Básicamente son tres pasos:</p>
+
+<ol>
+<li><a href="http://www.neo4j.org/download">Bajar</a> la última versión de Neo4j.</li>
+<li>Extraer el contenido del archivo comprimido.</li>
+<li>Ejecutar el <em>script</em> correspondiente <code>$directorio/de/neo4j/bin/neo4j start</code></li>
+</ol>
+
+
+<p>¿Difícil? <strong>Verdad que no</strong>.</p>
+]]></content>
+  </entry>
+  
+</feed>

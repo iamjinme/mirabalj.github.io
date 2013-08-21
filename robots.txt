@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://mirabalj.github.io/sitemap.xml 
+Sitemap: http://blog.jinme.org/sitemap.xml 
