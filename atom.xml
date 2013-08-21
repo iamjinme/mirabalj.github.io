@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme: compartiendo ideas libres]]></title>
   <link href="http://mirabalj.github.io/atom.xml" rel="self"/>
   <link href="http://mirabalj.github.io/"/>
-  <updated>2013-08-21T09:35:13-04:30</updated>
+  <updated>2013-08-21T10:41:38-04:30</updated>
   <id>http://mirabalj.github.io/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tu logo CopyLeft con CSS]]></title>
+    <link href="http://mirabalj.github.io/blog/2013/08/21/tu-logo-copyleft-con-css/"/>
+    <updated>2013-08-21T09:50:00-04:30</updated>
+    <id>http://mirabalj.github.io/blog/2013/08/21/tu-logo-copyleft-con-css</id>
+    <content type="html"><![CDATA[<p>La mayoría de las cosas que comparto son de dominio público, y si hay algo que detesto es el asunto del Copyright, más aún cuando no <del>tengo</del> tenia un logo para mostrar el CopyLeft.
+Pensado en CSS3 se me ocurrió crear este <em>pedazo</em> de código para crear el CopyLeft en HTML5 <strong>sin usar imágenes</strong> que ahora les comparto. Puro código libre.</p>
+
+<!--more-->
+
+
+<h2>HTML5</h2>
+
+<p>Lo primero es tener el texto de tu CopyLeft, que por ahora será el carácter <strong>©</strong>, o sea el del Copyright, que colocaremos en un <code>span</code> e identificaremos con una clase.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;copyleft-symbol&quot;</span><span class="nt">&gt;</span>©<span class="nt">&lt;/span&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>CSS3</h2>
+
+<p>A continuación agregamos a nuestra hoja de estilos el nombre de la clase asignada al <code>span</code> y el código que transformará el carácter a CopyLeft.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.copyleft-symbol</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">filter</span><span class="o">:</span> <span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">BasicImage</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Como verán insertamos código para que sea compatible con todos los navegadores, incluso IE que utiliza un <strong>filtro</strong> especial.
+Si quieren ver como funciona, vayan el final de la página y se mostrará el logo CopyLeft activado. Espero les haya gustado este <em>snippet</em>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Instalando y configurando Octopress]]></title>
