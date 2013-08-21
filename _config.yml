@@ -3,12 +3,12 @@
 # ----------------------- #
 
 url: http://mirabalj.github.io
-title: El blog de Jinme
-subtitle: Compartiendo ideas libres.
+title: "Jinme: compartiendo ideas libres"
+subtitle: El blog de Jinme
 author: Jinme
 simple_search: http://google.com/search
 description: Un blog sobre Tecnología, Desarrollo Móvil, Emprendimiento e innovación
-keywords: software libre, tecnologia, movil, programacion, php, yii, development, opensource, cpp, entrepreneur, innovation, database, nosql, travel, ideas
+keywords: software libre, tecnologia, movil, programacion, ideas, php, yii, development, opensource, cpp, entrepreneur, innovation, database, nosql, travel, jinme
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
