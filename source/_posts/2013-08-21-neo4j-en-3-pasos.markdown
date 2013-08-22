@@ -12,7 +12,7 @@ Parece complicado pero no lo es; de hecho [NOSQL](http://es.wikipedia.org/wiki/N
 Para entender mejor que son bases de datos orientadas a grafos Ian Robinson _(director de Neo Technology)_ lo explica en éste vídeo, luego la guía para instalar **Neo4j**.
 <!--more-->
 
-{% video https://player.vimeo.com/video/56043918#t=0m19s 640 259 http://assets.neo4j.org/img/still/what_isa_graphdb.jpg %}
+{% vimeo 56043918 %}
 
 ## Guía de instalación
 
