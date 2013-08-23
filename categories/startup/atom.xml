@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: startup | Jinme: compartiendo ideas libres]]></title>
+  <link href="http://blog.jinme.org/categories/startup/atom.xml" rel="self"/>
+  <link href="http://blog.jinme.org/"/>
+  <updated>2013-08-23T10:35:15-04:30</updated>
+  <id>http://blog.jinme.org/</id>
+  <author>
+    <name><![CDATA[Jinme]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cómo desarrollar la cultura perfecta para comenzar una Startup]]></title>
+    <link href="http://blog.jinme.org/2013/08/23/como-desarrollar-la-cultura-perfecta-para-comenzar-una-startup/"/>
+    <updated>2013-08-23T10:02:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/08/23/como-desarrollar-la-cultura-perfecta-para-comenzar-una-startup</id>
+    <content type="html"><![CDATA[<h3>Qué hace a un equipo poderoso?</h3>
+
+<p>Esta es una breve introducción con <strong>infografía incluida</strong> sobre cómo desarrollar esa cultura de arranque en una Startup.</p>
+
+<!--more-->
+
+
+<p>Un buen inicio es sinónimo de <strong>grandes personas</strong>. Por la gente, nos referimos a la <em>gente feliz</em>. Su conexión con la puesta en marcha está tan profundamente arraigada que pueden invertir interminables horas de trabajo. Pero, ¿cómo puede un fundador de una Startup asegurarse de que el equipo le tiene el cariño suficiente al producto que están construyendo? Cuando se trata de fomentar la <strong>cultura de arranque</strong>, no se trata sólo de tener mesas de futbolín, grifos de cerveza, Macs o Raspberry Pi. Está en hacer que la gente se de cuenta de la importancia de su trabajo, la puesta en marcha y que son parte de algo «perturbadoramente increible».</p>
+
+<p><strong>Cada problema tiene o tendrá una Startup</strong>. Cada Startup trabaja para hacer algo bueno por el planeta. Un hombre solo no puede hacer eso, se necesita de un equipo para apoyarlo. <strong>Un buen equipo</strong> no tiene precio para una Startup. Conexiones entre equipos, medio ambiente, cohesión <em>(por supuesto)</em>, grandes espacios de oficinas, <strong>Hacking Day</strong>, lluvia de ideas, aperitivos y comidas gratuitas, grandes políticas para las vacaciones y mucho más puede ayudar a <strong>darle un respiro</strong> a la puesta en marcha de tu Startup.</p>
+
+<p><img class="<a" src="href="https://s3.amazonaws.com/uploads.startups.fm/wp-content/uploads/2013/Infographics/startup-culture.jpg">https://s3.amazonaws.com/uploads.startups.fm/wp-content/uploads/2013/Infographics/startup-culture.jpg</a>"></p>
+
+<p>Traducción «libre» del artículo <a href="http://startups.fm/2013/07/31/what-makes-a-powerpacked-team-our-presentation-on-how-to-develop-that-right-startup-culture.html">original</a> <em>en ingles</em> de Startups.fm</p>
+]]></content>
+  </entry>
+  
+</feed>
