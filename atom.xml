@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme: compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-21T22:31:33-04:30</updated>
+  <updated>2013-08-22T21:23:26-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Neo4j en 3 pasos]]></title>
-    <link href="http://blog.jinme.org/blog/2013/08/21/neo4j-en-3-pasos/"/>
+    <link href="http://blog.jinme.org/2013/08/21/neo4j-en-3-pasos/"/>
     <updated>2013-08-21T12:04:00-04:30</updated>
-    <id>http://blog.jinme.org/blog/2013/08/21/neo4j-en-3-pasos</id>
+    <id>http://blog.jinme.org/2013/08/21/neo4j-en-3-pasos</id>
     <content type="html"><![CDATA[<p><strong>No todo es SQL</strong>. De hecho existen unas joyas de bases de datos como <a href="http://www.neo4j.org/">Neo4j</a>: NoSQL y orientada a grafos.
 Parece complicado pero no lo es; de hecho <a href="http://es.wikipedia.org/wiki/NoSQL">NOSQL</a> es un reciente paradigma en el ámbito de las bases de datos.
 Para entender mejor que son bases de datos orientadas a grafos Ian Robinson <em>(director de Neo Technology)</em> lo explica en éste vídeo, luego la guía para instalar <strong>Neo4j</strong>.</p>
@@ -47,9 +47,9 @@ Para entender mejor que son bases de datos orientadas a grafos Ian Robinson <em>
   
   <entry>
     <title type="html"><![CDATA[Tu logo CopyLeft con CSS]]></title>
-    <link href="http://blog.jinme.org/blog/2013/08/21/tu-logo-copyleft-con-css/"/>
+    <link href="http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/"/>
     <updated>2013-08-21T09:50:00-04:30</updated>
-    <id>http://blog.jinme.org/blog/2013/08/21/tu-logo-copyleft-con-css</id>
+    <id>http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css</id>
     <content type="html"><![CDATA[<p>La mayoría de las cosas que comparto son de dominio público, y si hay algo que detesto es el asunto del Copyright, más aún cuando no <del>tengo</del> tenia un logo para mostrar el CopyLeft.
 Pensado en CSS3 se me ocurrió crear este <em>pedazo</em> de código para crear el CopyLeft en HTML5 <strong>sin usar imágenes</strong> que ahora les comparto. Puro código libre.</p>
 
@@ -91,9 +91,9 @@ Si quieren ver como funciona, vayan el final de la página y se mostrará el log
   
   <entry>
     <title type="html"><![CDATA[Instalando y configurando Octopress]]></title>
-    <link href="http://blog.jinme.org/blog/2013/08/19/instalando-y-configurando-octopress/"/>
+    <link href="http://blog.jinme.org/2013/08/19/instalando-y-configurando-octopress/"/>
     <updated>2013-08-19T11:07:00-04:30</updated>
-    <id>http://blog.jinme.org/blog/2013/08/19/instalando-y-configurando-octopress</id>
+    <id>http://blog.jinme.org/2013/08/19/instalando-y-configurando-octopress</id>
     <content type="html"><![CDATA[<p>Luego de años sin blog, debido a la perdida de <a href="http://matandotigres.wordpress.com">MatandoTigres</a> he decidido retornar con un espacio renovado.
 Esta semana, intentando abordar excelentes lenguajes como Ruby y <em>auto-obligado</em> a usar Git he decidido montar este nuevo Blog en <a href="https://github.com/">Github</a> usando una excelente herramienta desarrollada en Software Libre llamada <a href="http://octopress.org/">Octopress</a>.
 Que mejor manera de comenzar explicando como instalar y configurar Octopress, un <em>framework de blogging para hackers</em>.

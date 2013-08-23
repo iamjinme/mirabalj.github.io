@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://blog.jinme.org/blog/2013/08/19/instalando-y-configurando-octopress/</loc>
+        <loc>http://blog.jinme.org/2013/08/19/instalando-y-configurando-octopress/</loc>
         <lastmod>2013-08-20T19:12:20-04:30</lastmod>
     </url>
     <url>
-        <loc>http://blog.jinme.org/blog/2013/08/21/tu-logo-copyleft-con-css/</loc>
+        <loc>http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/</loc>
         <lastmod>2013-08-21T10:38:16-04:30</lastmod>
     </url>
     <url>
-        <loc>http://blog.jinme.org/blog/2013/08/21/neo4j-en-3-pasos/</loc>
-        <lastmod>2013-08-21T21:23:59-04:30</lastmod>
-    </url>
-    <url>
-        <loc>http://blog.jinme.org/blog/archives/</loc>
+        <loc>http://blog.jinme.org/2013/08/21/neo4j-en-3-pasos/</loc>
         <lastmod>2013-08-21T21:23:59-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-08-21T21:23:59-04:30</lastmod>
+        <lastmod>2013-08-22T21:19:31-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
         <lastmod>2013-08-20T09:40:07-04:30</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.jinme.org/archives/</loc>
+        <lastmod>2013-08-21T21:23:59-04:30</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tu logo CopyLeft con CSS - Jinme: compartiendo ideas libres</title>
+  <meta name="author" content="Jinme">
+
+  
+  <meta name="description" content="Snippet para crear un logo Copyleft con CSS" />
+
+  
+  <meta name="keywords" content="web design, css, html, copyleft" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/rve-styles.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jinme: compartiendo ideas libres" type="application/atom+xml">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap-collapse.js"></script>
+  <script src="/js/bootstrap-carousel.js"></script>
+  <script src="/js/modernizr-2.0.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/js/octopress.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function(){
+        $('.carousel').carousel()
+    });
+  </script>
+  <style media="screen" type="text/css">
+.copyleft-symbol {
+	float: left;
+	position: relative;
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	margin-right: 5px;
+}
+  </style>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <div class="navbar navbar-inverse navbar-static-top">
+  	<div class="navbar-inner">
+  	  <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="fui-menu-24"></span>
+        </a>
+  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
+  	      <ul class="nav">
+    
+        <li ><a href="/index.html">Inicio</a></li>
+    
+        <li ><a href="/archives">Artículos</a></li>
+    
+        <li ><a href="http://about.me/mirabalj">Acerca de</a></li>
+    
+</ul>
+
+<ul class="nav pull-right">
+    
+    <li><a href="http://github.com/mirabalj" title="Github Profile"><i class="icon-github-sign social-navbar"></i></a></li>
+    
+    
+    
+    <li><a href="http://twitter.com/mirabalj" title="Twitter Profile"><i class="icon-twitter-sign social-navbar"></i></a></li>
+    
+    
+    <li><a href="http://plus.google.com/100924816002367275440" title="Google+ Profile"><i class="icon-google-plus-sign social-navbar"></i></a></li>
+    
+    
+    
+</ul>
+
+  	    </div>
+  	  </div>
+  	</div>
+  </div>
+  <div class="container" id="main">
+    <div class="span12">
+      <div class="row-fluid">
+        <div id="content">
+          <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+  <div class="jumbotron">
+    Tu Logo CopyLeft Con CSS
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-08-21T09:50:00-04:30" pubdate data-updated="true">Ago 21, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>La mayoría de las cosas que comparto son de dominio público, y si hay algo que detesto es el asunto del Copyright, más aún cuando no <del>tengo</del> tenia un logo para mostrar el CopyLeft.
+Pensado en CSS3 se me ocurrió crear este <em>pedazo</em> de código para crear el CopyLeft en HTML5 <strong>sin usar imágenes</strong> que ahora les comparto. Puro código libre.</p>
+
+<!--more-->
+
+
+<h2>HTML5</h2>
+
+<p>Lo primero es tener el texto de tu CopyLeft, que por ahora será el carácter <strong>©</strong>, o sea el del Copyright, que colocaremos en un <code>span</code> e identificaremos con una clase.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;copyleft-symbol&quot;</span><span class="nt">&gt;</span>©<span class="nt">&lt;/span&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>CSS3</h2>
+
+<p>A continuación agregamos a nuestra hoja de estilos el nombre de la clase asignada al <code>span</code> y el código que transformará el carácter a CopyLeft.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.copyleft-symbol</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">filter</span><span class="o">:</span> <span class="n">progid</span><span class="o">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">BasicImage</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Como verán insertamos código para que sea compatible con todos los navegadores, incluso IE que utiliza un <strong>filtro</strong> especial.
+Si quieren ver como funciona, vayan el final de la página y se mostrará el logo CopyLeft activado. Espero les haya gustado este <em>snippet</em>.</p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+
+  <a href="/categories/copyleft/"><span class="badge">copyleft</span></a>
+
+  <a href="/categories/css/"><span class="badge">css</span></a>
+
+  <a href="/categories/diseño web/"><span class="badge">diseño web</span></a>
+
+  <a href="/categories/html/"><span class="badge">html</span></a>
+
+
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/08/19/instalando-y-configurando-octopress/" title="Previous Post: Instalando y configurando Octopress">&laquo; Instalando y configurando Octopress</a>
+          
+          
+            <a class="basic-alignment right" href="/2013/08/21/neo4j-en-3-pasos/" title="Next Post: Neo4j en 3 pasos">Neo4j en 3 pasos &raquo;</a>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comentarios</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+
+
+        </div>
+      </div>
+      <div class="row-fluid">
+        <footer class="footer-page" role="contentinfo">
+          <p>
+  Copyleft <span class="copyleft-symbol">&copy;</span> 2013 - Jinme -
+  <span class="credit">Soportado por <a href="http://octopress.org">Octopress</a></span> - Tema de <a href="http://alexgaribay.com">Alex Garibay</a>
+</p>
+
+
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mirabalj';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/';
+        var disqus_url = 'http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
