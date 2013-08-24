@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-23T11:18:05-04:30</updated>
+  <updated>2013-08-24T12:29:04-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hospedar los archivos de tu sitio web en Dropbox]]></title>
+    <link href="http://blog.jinme.org/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox/"/>
+    <updated>2013-08-24T10:58:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox</id>
+    <content type="html"><![CDATA[<p>Ahora que he dado vida a este blog, estoy intentado <strong>mejorar el rendimiento</strong> del mismo <em>(si se puede)</em> a través de distintas herramientas o arquitecturas de redes disponibles. Se me ocurrió aplicar una especie de <a href="http://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos">CDN</a>, pero para <strong>Octopress</strong>. Si estas buscando algo para Wordpress, existe en la red mucha información al respecto, como el uso de <a href="http://mvkoen.com/cdn-gratuito-de-jsdelivr-para-wordpress/">jsdelivr</a>.</p>
+
+<!--more-->
+
+
+<p>Actualmente uso <a href="https://github.com">Github</a> para alojar el blog, entonces ¿porque no usar un <strong>servicio gratuito</strong> como Dropbox para alojar todo lo que no sea HTML? como las imágenes, javascript, css, vídeos y documentos. Con estos pasos creamos una especie de <strong>seudo-CDN</strong> donde el contenido es distribuido a través de distintas redes disponibles <em>casi siempre</em>.</p>
+
+<p><strong>Paso 1.</strong> <a href="https://www.dropbox.com/enable_public_folder">habilitar la carpeta pública</a> de Dropbox.</p>
+
+<p><strong>Paso 2.</strong> subir los archivos necesarios (css, imagenes, javascript) a la carpeta pública.</p>
+
+<p><strong>Paso 3.</strong> obtener el enlace público del archivo como se muestra en la imagen <em>(si usas la interfaz web)</em>.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130824-cdn-dropbox.png"></p>
+
+<p>Como veras tengo los archivos alojados en una carpeta llamada <strong>cdn</strong> dentro de la carpeta pública, para tener un poco más de organización.</p>
+
+<p><strong>Paso 4.</strong> por último solo debes hacer referencia en el código al enlace obtenido <code>https://dl.dropboxusercontent.com/enlace/al/archivo</code>, en el caso de imágenes y estilos se hace de la siguiente forma.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://dl.dropboxusercontent.com/u/143061433/cdn/0.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;https://dl.dropboxusercontent.com/u/143061433/cdn/style.css&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Para finalizar es importante leer los <em>términos de uso</em>, para evitar <strong>saturar</strong> el uso de tu cuenta en <strong>Dropbox</strong> y que te la puedan cancelar. No conozco ningún caso, pero si tu sitio es muy visitado mejor apúntate a algo más profesional como el servicio <a href="https://www.cloudflare.com/">Cloudfare</a> del cual probablemente hablaré más adelante.</p>
+
+<p><strong>Y listo!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cómo desarrollar la cultura perfecta para comenzar una Startup]]></title>
