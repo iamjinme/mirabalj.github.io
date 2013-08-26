@@ -7,9 +7,10 @@ categories: [svg, javascript, 3 pasos, html]
 keywords: vectores, svg, javascript, 3 pasos, web design, Raphaël
 description: Tutorial para realizar gráficos SVG con Raphaël en Javascript
 ---
-Algo que parecía imposible hace años era el uso de gráficos vectoriales o [SVG](http://es.wikipedia.org/wiki/Scalable_Vector_Graphics) en el navegador. **Hoy la historia es otra**, sin embargo realizarlos pudiera resultar difícil al principio, **hasta ahora**.
+Algo que parecía imposible hace años era el uso de gráficos vectoriales o [SVG](http://es.wikipedia.org/wiki/Scalable_Vector_Graphics) en el navegador. **Hoy la historia es otra**, sin embargo realizarlos pudiera resultar difícil al principio, **hasta ahora**. Y te lo explico en **tres pasos**.
+<!--more-->
 
-[Raphaël](http://raphaeljs.com/) es _una joya_, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un _widget_ puedes hacerlo simple y fácilmente con esta librería. Y te lo explico en **tres pasos**.
+[Raphaël](http://raphaeljs.com/) es _una joya_, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un _widget_ puedes hacerlo simple y fácilmente con esta librería.
 
 1. Bájate el pequeño archivo de **31 Kb** [acá](http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js)
 2. Incluye el _script_ `raphael-min.js` en cualquier parte de tu archivo HTML
