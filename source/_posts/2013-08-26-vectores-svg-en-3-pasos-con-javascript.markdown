@@ -3,7 +3,7 @@ layout: post
 title: "Realizando vectores SVG con Javascript en 3 pasos"
 date: 2013-08-26 08:42
 comments: true
-categories: [svg, javascript, 3 pasos, html]
+categories: [svg, javascript, 3-pasos, html]
 keywords: vectores, svg, javascript, 3 pasos, web design, Raphaël
 description: Tutorial para realizar gráficos SVG con Raphaël en Javascript
 ---

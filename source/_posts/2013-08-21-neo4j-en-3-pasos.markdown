@@ -3,7 +3,7 @@ layout: post
 title: "Neo4j en 3 pasos"
 date: 2013-08-21 12:04
 comments: true
-categories: [database, neo4j, nosql, 3 pasos, grafos]
+categories: [database, neo4j, nosql, 3-pasos, grafos]
 keywords: neo4j, database, guide, nosql, 3 pasos, grafos
 description: Guia para instalar la base de datos Neo4j
 ---
