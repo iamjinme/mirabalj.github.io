@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-24T18:58:20-04:30</updated>
+  <updated>2013-08-26T09:31:52-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Realizando vectores SVG con Javascript en 3 pasos]]></title>
+    <link href="http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/"/>
+    <updated>2013-08-26T08:42:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript</id>
+    <content type="html"><![CDATA[<p>Algo que parecía imposible hace años era el uso de gráficos vectoriales o <a href="http://es.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a> en el navegador. <strong>Hoy la historia es otra</strong>, sin embargo realizarlos pudiera resultar difícil al principio, <strong>hasta ahora</strong>.</p>
+
+<p><a href="http://raphaeljs.com/">Raphaël</a> es <em>una joya</em>, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un <em>widget</em> puedes hacerlo simple y fácilmente con esta librería. Y te lo explico en <strong>tres pasos</strong>.</p>
+
+<ol>
+<li>Bájate el pequeño archivo de <strong>31 Kb</strong> <a href="http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js">acá</a></li>
+<li>Incluye el <em>script</em> <code>raphael-min.js</code> en cualquier parte de tu archivo HTML</li>
+<li>Finalmente incluyes el código en javascript para realizar tu gráfico vectorial, aquí crearemos un simple circulo que quedaria como sigue.</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;raphael-min.js&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Crea el canvas canvas (contenedor) de tamaño 320 × 200 en las coordenadas 10, 50</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">paper</span> <span class="o">=</span> <span class="nx">Raphael</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Crea un circulo en las coordenadas x = 50, y = 40, con radio 10</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Configura el atributo de relleno del circulo a rojo (#f00)</span>
+</span><span class='line'><span class="nx">circle</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Asignamos el atributo exterior del circulo a blanco</span>
+</span><span class='line'><span class="nx">circle</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">,</span> <span class="s2">&quot;#fff&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Pruebalo.</strong> Como veras es un proceso muy sencillo para crear gráficos SVG, claro está que tiene infinidad de elementos que puedes realizar, todos <a href="http://raphaeljs.com/reference.html">documentados</a> y hasta con variados <strong>ejemplos</strong> que puedes utilizar.</p>
+
+<p>Para finalizar les indico que esta útil librería soporta Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ y hasta Internet Explorer 6.0+</p>
+
+<p><strong>La imaginación es el limite!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hospedar los archivos de tu sitio web en Dropbox]]></title>

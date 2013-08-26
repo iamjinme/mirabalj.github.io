@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: html | Jinme - Compartiendo ideas libres]]></title>
-  <link href="http://blog.jinme.org/categories/html/atom.xml" rel="self"/>
+  <title><![CDATA[Category: svg | Jinme - Compartiendo ideas libres]]></title>
+  <link href="http://blog.jinme.org/categories/svg/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
   <updated>2013-08-26T09:31:52-04:30</updated>
   <id>http://blog.jinme.org/</id>
@@ -58,45 +58,6 @@ circle.attr("stroke", "#fff");
 <p>Para finalizar les indico que esta útil librería soporta Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ y hasta Internet Explorer 6.0+</p>
 
 <p><strong>La imaginación es el limite!</strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tu logo CopyLeft con CSS]]></title>
-    <link href="http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/"/>
-    <updated>2013-08-21T09:50:00-04:30</updated>
-    <id>http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css</id>
-    <content type="html"><![CDATA[<p>La mayoría de las cosas que comparto son de dominio público, y si hay algo que detesto es el asunto del Copyright, más aún cuando no <del>tengo</del> tenia un logo para mostrar el CopyLeft.
-Pensado en CSS3 se me ocurrió crear este <em>pedazo</em> de código para crear el CopyLeft en HTML5 <strong>sin usar imágenes</strong> que ahora les comparto. Puro código libre.</p>
-
-<!--more-->
-
-
-<h2>HTML5</h2>
-
-<p>Lo primero es tener el texto de tu CopyLeft, que por ahora será el carácter <strong>©</strong>, o sea el del Copyright, que colocaremos en un <code>span</code> e identificaremos con una clase.</p>
-
-<p><code>html
-&lt;span class="copyleft-symbol"&gt;©&lt;/span&gt;
-</code></p>
-
-<h2>CSS3</h2>
-
-<p>A continuación agregamos a nuestra hoja de estilos el nombre de la clase asignada al <code>span</code> y el código que transformará el carácter a CopyLeft.</p>
-
-<p>``` css
-.copyleft-symbol {</p>
-
-<pre><code>transform: rotate(180deg);
--webkit-transform: rotate(180deg);
--moz-transform: rotate(180deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-</code></pre>
-
-<p>}
-```
-Como verán insertamos código para que sea compatible con todos los navegadores, incluso IE que utiliza un <strong>filtro</strong> especial.
-Si quieren ver como funciona, vayan el final de la página y se mostrará el logo CopyLeft activado. Espero les haya gustado este <em>snippet</em>.</p>
 ]]></content>
   </entry>
   

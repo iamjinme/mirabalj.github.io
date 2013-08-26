@@ -10,7 +10,7 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/2013/08/21/neo4j-en-3-pasos/</loc>
-        <lastmod>2013-08-21T21:23:59-04:30</lastmod>
+        <lastmod>2013-08-26T08:47:12-04:30</lastmod>
     </url>
     <url>
         <loc>
@@ -25,8 +25,12 @@
         <lastmod>2013-08-24T12:28:32-04:30</lastmod>
     </url>
     <url>
+        <loc>http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/</loc>
+        <lastmod>2013-08-26T09:31:17-04:30</lastmod>
+    </url>
+    <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-08-24T12:28:32-04:30</lastmod>
+        <lastmod>2013-08-26T09:31:17-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
@@ -34,6 +38,6 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/archives/</loc>
-        <lastmod>2013-08-24T12:28:32-04:30</lastmod>
+        <lastmod>2013-08-26T09:31:17-04:30</lastmod>
     </url>
 </urlset>

@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hospedar los archivos de tu sitio web en Dropbox - Jinme - Compartiendo ideas libres</title>
+  <title>Realizando vectores SVG con Javascript en 3 pasos - Jinme - Compartiendo ideas libres</title>
   <meta name="author" content="Jinme">
 
   
-  <meta name="description" content="Tutorial para usar Dropbox como un seudo-CDN" />
+  <meta name="description" content="Tutorial para realizar gráficos SVG con Raphaël en Javascript" />
 
   
-  <meta name="keywords" content="dropbox, octopress, wordpress, cdn, networking" />
+  <meta name="keywords" content="vectores, svg, javascript, 3 pasos, web design, Raphaël" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jinme.org/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox">
+  <link rel="canonical" href="http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -105,7 +105,7 @@
 
   <header>
   <div class="jumbotron">
-    Hospedar Los Archivos De Tu Sitio Web en Dropbox
+    Realizando Vectores SVG Con Javascript en 3 Pasos
 	<h5>
 
 
@@ -118,40 +118,62 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2013-08-24T10:58:00-04:30" pubdate data-updated="true">Ago 24, 2013</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2013-08-26T08:42:00-04:30" pubdate data-updated="true">Ago 26, 2013</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Ahora que he dado vida a este blog, estoy intentado <strong>mejorar el rendimiento</strong> del mismo <em>(si se puede)</em> a través de distintas herramientas o arquitecturas de redes disponibles. Se me ocurrió aplicar una especie de <a href="http://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos">CDN</a>, pero para <strong>Octopress</strong>. Si estas buscando algo para Wordpress, existe en la red mucha información al respecto, como el uso de <a href="http://mvkoen.com/cdn-gratuito-de-jsdelivr-para-wordpress/">jsdelivr</a>.</p>
+      <p>Algo que parecía imposible hace años era el uso de gráficos vectoriales o <a href="http://es.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a> en el navegador. <strong>Hoy la historia es otra</strong>, sin embargo realizarlos pudiera resultar difícil al principio, <strong>hasta ahora</strong>.</p>
 
-<!--more-->
+<p><a href="http://raphaeljs.com/">Raphaël</a> es <em>una joya</em>, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un <em>widget</em> puedes hacerlo simple y fácilmente con esta librería. Y te lo explico en <strong>tres pasos</strong>.</p>
 
+<ol>
+<li>Bájate el pequeño archivo de <strong>31 Kb</strong> <a href="http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js">acá</a></li>
+<li>Incluye el <em>script</em> <code>raphael-min.js</code> en cualquier parte de tu archivo HTML</li>
+<li>Finalmente incluyes el código en javascript para realizar tu gráfico vectorial, aquí crearemos un simple circulo que quedaria como sigue.</li>
+</ol>
 
-<p>Actualmente uso <a href="https://github.com">Github</a> para alojar el blog, entonces ¿porque no usar un <strong>servicio gratuito</strong> como Dropbox para alojar todo lo que no sea HTML? como las imágenes, javascript, css, vídeos y documentos. Con estos pasos creamos una especie de <strong>seudo-CDN</strong> donde el contenido es distribuido a través de distintas redes disponibles <em>casi siempre</em>.</p>
-
-<p><strong>Paso 1.</strong> <a href="https://www.dropbox.com/enable_public_folder">habilitar la carpeta pública</a> de Dropbox.</p>
-
-<p><strong>Paso 2.</strong> subir los archivos necesarios (css, imagenes, javascript) a la carpeta pública.</p>
-
-<p><strong>Paso 3.</strong> obtener el enlace público del archivo como se muestra en la imagen <em>(si usas la interfaz web)</em>.</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130824-cdn-dropbox.png"></p>
-
-<p>Como veras tengo los archivos alojados en una carpeta llamada <strong>cdn</strong> dentro de la carpeta pública, para tener un poco más de organización.</p>
-
-<p><strong>Paso 4.</strong> por último solo debes hacer referencia en el código al enlace obtenido <code>https://dl.dropboxusercontent.com/enlace/al/archivo</code>, en el caso de imágenes y estilos se hace de la siguiente forma.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://dl.dropboxusercontent.com/u/143061433/cdn/0.jpg&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;https://dl.dropboxusercontent.com/u/143061433/cdn/style.css&quot;</span><span class="nt">&gt;</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;raphael-min.js&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Crea el canvas canvas (contenedor) de tamaño 320 × 200 en las coordenadas 10, 50</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">paper</span> <span class="o">=</span> <span class="nx">Raphael</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Crea un circulo en las coordenadas x = 50, y = 40, con radio 10</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Configura el atributo de relleno del circulo a rojo (#f00)</span>
+</span><span class='line'><span class="nx">circle</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Asignamos el atributo exterior del circulo a blanco</span>
+</span><span class='line'><span class="nx">circle</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">,</span> <span class="s2">&quot;#fff&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Para finalizar es importante leer los <em>términos de uso</em>, para evitar <strong>saturar</strong> el uso de tu cuenta en <strong>Dropbox</strong> y que te la puedan cancelar. No conozco ningún caso, pero si tu sitio es muy visitado mejor apúntate a algo más profesional como el servicio <a href="https://www.cloudflare.com/">Cloudfare</a> del cual probablemente hablaré más adelante.</p>
+<p><strong>Pruebalo.</strong> Como veras es un proceso muy sencillo para crear gráficos SVG, claro está que tiene infinidad de elementos que puedes realizar, todos <a href="http://raphaeljs.com/reference.html">documentados</a> y hasta con variados <strong>ejemplos</strong> que puedes utilizar.</p>
 
-<p><strong>Y listo!</strong></p>
+<p>Para finalizar les indico que esta útil librería soporta Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ y hasta Internet Explorer 6.0+</p>
+
+<p><strong>La imaginación es el limite!</strong></p>
 
     </div>
   </div>
@@ -170,11 +192,13 @@
 
 
 
-  <a href="/categories/dropbox/"><span class="badge">dropbox</span></a>
+  <a href="/categories/3 pasos/"><span class="badge">3 pasos</span></a>
 
-  <a href="/categories/octopress/"><span class="badge">octopress</span></a>
+  <a href="/categories/html/"><span class="badge">html</span></a>
 
-  <a href="/categories/redes/"><span class="badge">redes</span></a>
+  <a href="/categories/javascript/"><span class="badge">javascript</span></a>
+
+  <a href="/categories/svg/"><span class="badge">svg</span></a>
 
 
 
@@ -204,10 +228,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/2013/08/23/como-desarrollar-la-cultura-perfecta-para-comenzar-una-startup/" title="Previous Post: Cómo desarrollar la cultura perfecta para comenzar una Startup">&laquo; Cómo desarrollar la cultura perfecta para comenzar una Startup</a>
+            <a class="basic-alignment left" href="/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox/" title="Previous Post: Hospedar los archivos de tu sitio web en Dropbox">&laquo; Hospedar los archivos de tu sitio web en Dropbox</a>
           
-          
-            <a class="basic-alignment right" href="/2013/08/26/vectores-svg-en-3-pasos-con-javascript/" title="Next Post: Realizando vectores SVG con Javascript en 3 pasos">Realizando vectores SVG con Javascript en 3 pasos &raquo;</a>
           
         </p>
       </div>
@@ -246,8 +268,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jinme.org/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox/';
-        var disqus_url = 'http://blog.jinme.org/2013/08/24/hospedar-los-archivos-de-tu-sitio-web-en-dropbox/';
+        var disqus_identifier = 'http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/';
+        var disqus_url = 'http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/';
         var disqus_script = 'embed.js';
       
     (function () {
