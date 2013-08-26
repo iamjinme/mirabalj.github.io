@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/categories/javascript/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-26T09:31:52-04:30</updated>
+  <updated>2013-08-26T09:35:16-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -18,9 +18,12 @@
     <link href="http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/"/>
     <updated>2013-08-26T08:42:00-04:30</updated>
     <id>http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript</id>
-    <content type="html"><![CDATA[<p>Algo que parecía imposible hace años era el uso de gráficos vectoriales o <a href="http://es.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a> en el navegador. <strong>Hoy la historia es otra</strong>, sin embargo realizarlos pudiera resultar difícil al principio, <strong>hasta ahora</strong>.</p>
+    <content type="html"><![CDATA[<p>Algo que parecía imposible hace años era el uso de gráficos vectoriales o <a href="http://es.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a> en el navegador. <strong>Hoy la historia es otra</strong>, sin embargo realizarlos pudiera resultar difícil al principio, <strong>hasta ahora</strong>. Y te lo explico en <strong>tres pasos</strong>.</p>
 
-<p><a href="http://raphaeljs.com/">Raphaël</a> es <em>una joya</em>, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un <em>widget</em> puedes hacerlo simple y fácilmente con esta librería. Y te lo explico en <strong>tres pasos</strong>.</p>
+<!--more-->
+
+
+<p><a href="http://raphaeljs.com/">Raphaël</a> es <em>una joya</em>, una pequeña librería en Javascript que simplifica trabajar con gráficos vectoriales en la web. Si deseas crear tu propio gráfico de barras, cortar una imagen o rotar un <em>widget</em> puedes hacerlo simple y fácilmente con esta librería.</p>
 
 <ol>
 <li>Bájate el pequeño archivo de <strong>31 Kb</strong> <a href="http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js">acá</a></li>
