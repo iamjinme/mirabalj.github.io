@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-26T09:51:32-04:30</updated>
+  <updated>2013-08-27T08:35:31-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cómo saber si un objeto JSON está vacío]]></title>
+    <link href="http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/"/>
+    <updated>2013-08-27T08:13:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio</id>
+    <content type="html"><![CDATA[<p>Hace unos días leía un <em>tuit</em> con la pregunta que inspira este artículo, no especificaba el lenguaje de programación ni nada, así que me pareció ideal <strong>agregar todos</strong> los posibles lenguajes para resolver este problema tan común. Puedes obtener la solución o colaborar con otros dando la tuya en los comentarios, por ahora les dejo la de <strong>Javascript</strong>.</p>
+
+<!--more-->
+
+
+<h2>Javascript</h2>
+
+<p>Puedes hacer una prueba creando una variable <code>var objeto = {}</code> y llamar a la función <code>isEmptyJSON(objeto)</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">isEmptyJSON</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>jQuery</h3>
+
+<p>Si trabajas con <a href="http://jquery.com/">jQuery</a>, esta librería tiene la función <code>jQuery.isEmptyObject(objeto)</code> que puedes utilizar.</p>
+
+<p>Recuerda que si tienes la solución en algún lenguaje de tu interés o la necesitas, <strong>deja tus comentarios</strong>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Realizando vectores SVG con Javascript en 3 pasos]]></title>

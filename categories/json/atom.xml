@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: json | Jinme - Compartiendo ideas libres]]></title>
+  <link href="http://blog.jinme.org/categories/json/atom.xml" rel="self"/>
+  <link href="http://blog.jinme.org/"/>
+  <updated>2013-08-27T08:35:31-04:30</updated>
+  <id>http://blog.jinme.org/</id>
+  <author>
+    <name><![CDATA[Jinme]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cómo saber si un objeto JSON está vacío]]></title>
+    <link href="http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/"/>
+    <updated>2013-08-27T08:13:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio</id>
+    <content type="html"><![CDATA[<p>Hace unos días leía un <em>tuit</em> con la pregunta que inspira este artículo, no especificaba el lenguaje de programación ni nada, así que me pareció ideal <strong>agregar todos</strong> los posibles lenguajes para resolver este problema tan común. Puedes obtener la solución o colaborar con otros dando la tuya en los comentarios, por ahora les dejo la de <strong>Javascript</strong>.</p>
+
+<!--more-->
+
+
+<h2>Javascript</h2>
+
+<p>Puedes hacer una prueba creando una variable <code>var objeto = {}</code> y llamar a la función <code>isEmptyJSON(objeto)</code></p>
+
+<p>``` javascript</p>
+
+<pre><code>function isEmptyJSON(obj) {
+    for(var i in obj) { return false; }
+    return true;
+}
+</code></pre>
+
+<p>```</p>
+
+<h3>jQuery</h3>
+
+<p>Si trabajas con <a href="http://jquery.com/">jQuery</a>, esta librería tiene la función <code>jQuery.isEmptyObject(objeto)</code> que puedes utilizar.</p>
+
+<p>Recuerda que si tienes la solución en algún lenguaje de tu interés o la necesitas, <strong>deja tus comentarios</strong>.</p>
+]]></content>
+  </entry>
+  
+</feed>

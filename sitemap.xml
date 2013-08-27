@@ -6,7 +6,7 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/2013/08/21/tu-logo-copyleft-con-css/</loc>
-        <lastmod>2013-08-26T09:51:31-04:30</lastmod>
+        <lastmod>2013-08-26T09:55:15-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/2013/08/21/neo4j-en-3-pasos/</loc>
@@ -26,11 +26,15 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/2013/08/26/vectores-svg-en-3-pasos-con-javascript/</loc>
-        <lastmod>2013-08-26T09:49:46-04:30</lastmod>
+        <lastmod>2013-08-26T10:57:07-04:30</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/</loc>
+        <lastmod>2013-08-27T08:35:14-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-08-26T09:51:31-04:30</lastmod>
+        <lastmod>2013-08-27T08:35:14-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
@@ -38,6 +42,6 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/archives/</loc>
-        <lastmod>2013-08-26T09:51:31-04:30</lastmod>
+        <lastmod>2013-08-27T08:35:14-04:30</lastmod>
     </url>
 </urlset>

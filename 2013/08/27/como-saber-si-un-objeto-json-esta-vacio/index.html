@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: html - Jinme - Compartiendo ideas libres</title>
+  <title>Cómo saber si un objeto JSON está vacío - Jinme - Compartiendo ideas libres</title>
   <meta name="author" content="Jinme">
 
   
-  <meta name="description" content="Category: html" />
+  <meta name="description" content="Código para saber si un objeto JSON esta vacío" />
 
   
-  <meta name="keywords" content="software libre, tecnologia, movil, programacion, ideas, php, yii, development, opensource, cpp, entrepreneur, innovation, database, nosql, travel, jinme" />
+  <meta name="keywords" content="development, json, empty, object, javascript, jquery" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jinme.orgcategories/html">
+  <link rel="canonical" href="http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -99,96 +99,125 @@
     <div class="span12">
       <div class="row-fluid">
         <div id="content">
-          <article role="article">
+          <div>
+<article class="hentry" role="article">
   
+
   <header>
-    <div class="jumbotron">
-      Category: Html
+  <div class="jumbotron">
+    Cómo Saber Si Un Objeto JSON Está Vacío
+	<h5>
+
+
+
+
+
+
+
+
+  
+
+
+<i class="icon-calendar-empty"></i> <time datetime="2013-08-27T08:13:00-04:30" pubdate data-updated="true">Ago 27, 2013</time></h5>
+  </div>
+</header>
+  <div class="row-fluid">
+    <div class="span12">
+      <p>Hace unos días leía un <em>tuit</em> con la pregunta que inspira este artículo, no especificaba el lenguaje de programación ni nada, así que me pareció ideal <strong>agregar todos</strong> los posibles lenguajes para resolver este problema tan común. Puedes obtener la solución o colaborar con otros dando la tuya en los comentarios, por ahora les dejo la de <strong>Javascript</strong>.</p>
+
+<!--more-->
+
+
+<h2>Javascript</h2>
+
+<p>Puedes hacer una prueba creando una variable <code>var objeto = {}</code> y llamar a la función <code>isEmptyJSON(objeto)</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">isEmptyJSON</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>jQuery</h3>
+
+<p>Si trabajas con <a href="http://jquery.com/">jQuery</a>, esta librería tiene la función <code>jQuery.isEmptyObject(objeto)</code> que puedes utilizar.</p>
+
+<p>Recuerda que si tienes la solución en algún lenguaje de tu interés o la necesitas, <strong>deja tus comentarios</strong>.</p>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <hr>
+    
+    <div class="row-fluid">
+      
+      <div class="span6">
+        <p class="meta">
+        
+        
+
+
+
+  <a href="/categories/javascript/"><span class="badge">javascript</span></a>
+
+  <a href="/categories/jquery/"><span class="badge">jquery</span></a>
+
+  <a href="/categories/json/"><span class="badge">json</span></a>
+
+  <a href="/categories/programacion/"><span class="badge">programacion</span></a>
+
+
+
+
+        </p>
+      </div>
+      
+      <div class="span6 social-sharing">
+        <div class="sharing">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+      </div>
+      
+      
     </div>
     
-  </header>
-  
-  <div id="blog-archives" class="category">
-
-  
-  <div class="row-fluid">
-    <div class="span1">
-  	
-  	
-  	  
-  	    <h2>2013</h2>
-  	
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="meta">
+          
+            <a class="basic-alignment left" href="/2013/08/26/vectores-svg-en-3-pasos-con-javascript/" title="Previous Post: Realizando vectores SVG con Javascript en 3 pasos">&laquo; Realizando vectores SVG con Javascript en 3 pasos</a>
+          
+          
+        </p>
+      </div>
     </div>
-    <div class="span11">
-      <article>
-  	
-<div class="row-fluid">
-	<div class="span1">
-		<h1 class="date-time"><time datetime="2013-08-26T08:42:00-04:30" pubdate><span class='month'>Aug</span> <span class='day'>26</span><span class='year'><!--2013--></span></time></h1>
-	</div>
-	<div class="span10">
-		<h1><a href="/2013/08/26/vectores-svg-en-3-pasos-con-javascript/">Realizando vectores SVG con Javascript en 3 pasos</a></h1>
-	</div>
-</div>
-
-<div class="row-fluid">
-	<div class="span1">
-	</div>
-	<div class="span10">
-		
-
-		<footer class="archive">
-		  <span class="categories">posted in <a class='category' href='/categories/3-pasos/'>3-pasos</a>, <a class='category' href='/categories/html/'>html</a>, <a class='category' href='/categories/javascript/'>javascript</a>, <a class='category' href='/categories/svg/'>svg</a></span>
-		</footer>
-		
-	</div>
-</div>
-
-
-  	</article>
-    </div>
-  </div>
-
-  
-  <div class="row-fluid">
-    <div class="span1">
-  	
-  	
-    </div>
-    <div class="span11">
-      <article>
-  	
-<div class="row-fluid">
-	<div class="span1">
-		<h1 class="date-time"><time datetime="2013-08-21T09:50:00-04:30" pubdate><span class='month'>Aug</span> <span class='day'>21</span><span class='year'><!--2013--></span></time></h1>
-	</div>
-	<div class="span10">
-		<h1><a href="/2013/08/21/tu-logo-copyleft-con-css/">Tu logo CopyLeft con CSS</a></h1>
-	</div>
-</div>
-
-<div class="row-fluid">
-	<div class="span1">
-	</div>
-	<div class="span10">
-		
-
-		<footer class="archive">
-		  <span class="categories">posted in <a class='category' href='/categories/copyleft/'>copyleft</a>, <a class='category' href='/categories/css/'>css</a>, <a class='category' href='/categories/diseno-web/'>diseno-web</a>, <a class='category' href='/categories/html/'>html</a></span>
-		</footer>
-		
-	</div>
-</div>
-
-
-  	</article>
-    </div>
-  </div>
-
-</div>
-
+  </footer>
 </article>
 
+  <section>
+    <h1>Comentarios</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
 
 
 
@@ -212,7 +241,10 @@
       var disqus_shortname = 'mirabalj';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/';
+        var disqus_url = 'http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
