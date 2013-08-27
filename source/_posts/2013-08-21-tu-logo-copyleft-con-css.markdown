@@ -3,7 +3,7 @@ layout: post
 title: "Tu logo CopyLeft con CSS"
 date: 2013-08-21 09:50
 comments: true
-categories: [css, copyleft, diseño-web, html] 
+categories: [css, copyleft, diseno-web, html] 
 keywords: web design, css, html, copyleft
 description: Snippet para crear un logo Copyleft con CSS
 ---
