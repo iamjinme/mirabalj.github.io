@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: array | Jinme - Compartiendo ideas libres]]></title>
+  <link href="http://blog.jinme.org/categories/array/atom.xml" rel="self"/>
+  <link href="http://blog.jinme.org/"/>
+  <updated>2013-09-06T09:57:49-04:30</updated>
+  <id>http://blog.jinme.org/</id>
+  <author>
+    <name><![CDATA[Jinme]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Convertir un arreglo Javascript a CSV]]></title>
+    <link href="http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/"/>
+    <updated>2013-09-06T09:13:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv</id>
+    <content type="html"><![CDATA[<p>Los archivos <a href="http://es.wikipedia.org/wiki/CSV">CSV</a> básicamente poseen un <strong>formato abierto</strong> que permite de manera sencilla el intercambio de información organizado tabularmente. Tal como se muestra en el ejemplo.</p>
+
+<p><code>text
+987,juan,87345,10 norte 342
+876,pedro,43649,8 oriente 342
+123,jorge,03342,av. libertad 23
+</code>
+A continuación explico como <strong>convertir los datos de un arreglo</strong> a este formato.</p>
+
+<!--more-->
+
+
+<p>Primeramente mostramos la información de un arreglo usando la función <code>valueOf()</code></p>
+
+<p>``` javascript
+var frutas = [&lsquo;manzana&rsquo;, &lsquo;duraznos&rsquo;, &lsquo;naranjas&rsquo;, &lsquo;mangos&rsquo;];</p>
+
+<p>var str = frutas.valueOf();</p>
+
+<p>//print str: manzana,duraznos,naranjas,mangos
+```
+Como vemos el método convierte un arreglo javascript a un <em>string</em> usando la coma como separador, suficiente para compartirlo en un archivo CSV.</p>
+
+<p>Ahora bien, si queremos usar el <em>pipe</em> <strong>(|)</strong> como separador, valido para el CSV; usaremos el método <code>join()</code></p>
+
+<p>``` javascript
+var frutas = [&lsquo;manzana&rsquo;, &lsquo;duraznos&rsquo;, &lsquo;naranjas&rsquo;, &lsquo;mangos&rsquo;];</p>
+
+<p>var str = frutas.join(&ldquo;|&rdquo;);</p>
+
+<p>//print str: manzana|duraznos|naranjas|mangos
+```
+<strong>¿Interesante, no?</strong> espero en el futuro ir publicando más trucos en el blog, <em>siempre necesarios.</em> Deja tus comentarios si tienes algún <em>snippet</em> en particular.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cómo saber si un objeto JSON está vacío - Jinme - Compartiendo ideas libres</title>
+  <title>Convertir un arreglo Javascript a CSV - Jinme - Compartiendo ideas libres</title>
   <meta name="author" content="Jinme">
 
   
-  <meta name="description" content="Código para saber si un objeto JSON esta vacío" />
+  <meta name="description" content="Truco para convertir un arreglo a formato CSV" />
 
   
-  <meta name="keywords" content="development, json, empty, object, javascript, jquery" />
+  <meta name="keywords" content="javascript, array, tricks, CSV" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio">
+  <link rel="canonical" href="http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -105,7 +105,7 @@
 
   <header>
   <div class="jumbotron">
-    Cómo Saber Si Un Objeto JSON Está Vacío
+    Convertir Un Arreglo Javascript a CSV
 	<h5>
 
 
@@ -118,36 +118,60 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2013-08-27T08:13:00-04:30" pubdate data-updated="true">Ago 27, 2013</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2013-09-06T09:13:00-04:30" pubdate data-updated="true">Sep 06, 2013</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Hace unos días leía un <em>tuit</em> con la pregunta que inspira este artículo, no especificaba el lenguaje de programación ni nada, así que me pareció ideal <strong>agregar todos</strong> los posibles lenguajes para resolver este problema tan común. Puedes obtener la solución o colaborar con otros dando la tuya en los comentarios, por ahora les dejo la de <strong>Javascript</strong>.</p>
+      <p>Los archivos <a href="http://es.wikipedia.org/wiki/CSV">CSV</a> básicamente poseen un <strong>formato abierto</strong> que permite de manera sencilla el intercambio de información organizado tabularmente. Tal como se muestra en el ejemplo.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>987,juan,87345,10 norte 342
+</span><span class='line'>876,pedro,43649,8 oriente 342
+</span><span class='line'>123,jorge,03342,av. libertad 23
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A continuación explico como <strong>convertir los datos de un arreglo</strong> a este formato.</p>
 
 <!--more-->
 
 
-<h2>Javascript</h2>
-
-<p>Puedes hacer una prueba creando una variable <code>var objeto = {}</code> y llamar a la función <code>isEmptyJSON(objeto)</code></p>
+<p>Primeramente mostramos la información de un arreglo usando la función <code>valueOf()</code></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">isEmptyJSON</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//print str: manzana,duraznos,naranjas,mangos</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>jQuery</h3>
+<p>Como vemos el método convierte un arreglo javascript a un <em>string</em> usando la coma como separador, suficiente para compartirlo en un archivo CSV.</p>
 
-<p>Si trabajas con <a href="http://jquery.com/">jQuery</a>, esta librería tiene la función <code>jQuery.isEmptyObject(objeto)</code> que puedes utilizar.</p>
+<p>Ahora bien, si queremos usar el <em>pipe</em> <strong>(|)</strong> como separador, valido para el CSV; usaremos el método <code>join()</code></p>
 
-<p>Recuerda que si tienes la solución en algún lenguaje de tu interés o la necesitas, <strong>deja tus comentarios</strong>.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//print str: manzana|duraznos|naranjas|mangos</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>¿Interesante, no?</strong> espero en el futuro ir publicando más trucos en el blog, <em>siempre necesarios.</em> Deja tus comentarios si tienes algún <em>snippet</em> en particular.</p>
 
     </div>
   </div>
@@ -166,13 +190,13 @@
 
 
 
+  <a href="/categories/array/"><span class="badge">array</span></a>
+
+  <a href="/categories/csv/"><span class="badge">csv</span></a>
+
   <a href="/categories/javascript/"><span class="badge">javascript</span></a>
 
-  <a href="/categories/jquery/"><span class="badge">jquery</span></a>
-
-  <a href="/categories/json/"><span class="badge">json</span></a>
-
-  <a href="/categories/programacion/"><span class="badge">programacion</span></a>
+  <a href="/categories/trucos/"><span class="badge">trucos</span></a>
 
 
 
@@ -202,10 +226,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/2013/08/26/vectores-svg-en-3-pasos-con-javascript/" title="Previous Post: Realizando vectores SVG con Javascript en 3 pasos">&laquo; Realizando vectores SVG con Javascript en 3 pasos</a>
+            <a class="basic-alignment left" href="/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/" title="Previous Post: Cómo saber si un objeto JSON está vacío">&laquo; Cómo saber si un objeto JSON está vacío</a>
           
-          
-            <a class="basic-alignment right" href="/2013/09/06/convertir-un-arreglo-javascript-a-csv/" title="Next Post: Convertir un arreglo Javascript a CSV">Convertir un arreglo Javascript a CSV &raquo;</a>
           
         </p>
       </div>
@@ -244,8 +266,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/';
-        var disqus_url = 'http://blog.jinme.org/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/';
+        var disqus_identifier = 'http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/';
+        var disqus_url = 'http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/';
         var disqus_script = 'embed.js';
       
     (function () {

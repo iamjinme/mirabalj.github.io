@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-08-27T08:35:31-04:30</updated>
+  <updated>2013-09-06T09:57:49-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Convertir un arreglo Javascript a CSV]]></title>
+    <link href="http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/"/>
+    <updated>2013-09-06T09:13:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv</id>
+    <content type="html"><![CDATA[<p>Los archivos <a href="http://es.wikipedia.org/wiki/CSV">CSV</a> básicamente poseen un <strong>formato abierto</strong> que permite de manera sencilla el intercambio de información organizado tabularmente. Tal como se muestra en el ejemplo.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>987,juan,87345,10 norte 342
+</span><span class='line'>876,pedro,43649,8 oriente 342
+</span><span class='line'>123,jorge,03342,av. libertad 23
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A continuación explico como <strong>convertir los datos de un arreglo</strong> a este formato.</p>
+
+<!--more-->
+
+
+<p>Primeramente mostramos la información de un arreglo usando la función <code>valueOf()</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//print str: manzana,duraznos,naranjas,mangos</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Como vemos el método convierte un arreglo javascript a un <em>string</em> usando la coma como separador, suficiente para compartirlo en un archivo CSV.</p>
+
+<p>Ahora bien, si queremos usar el <em>pipe</em> <strong>(|)</strong> como separador, valido para el CSV; usaremos el método <code>join()</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//print str: manzana|duraznos|naranjas|mangos</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>¿Interesante, no?</strong> espero en el futuro ir publicando más trucos en el blog, <em>siempre necesarios.</em> Deja tus comentarios si tienes algún <em>snippet</em> en particular.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cómo saber si un objeto JSON está vacío]]></title>
