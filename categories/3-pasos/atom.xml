@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 3-pasos | Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/categories/3-pasos/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-09-06T09:57:49-04:30</updated>
+  <updated>2013-09-11T09:11:45-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Subdominio para tu router con DD-WRT en 3 pasos]]></title>
+    <link href="http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/"/>
+    <updated>2013-09-11T07:30:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos</id>
+    <content type="html"><![CDATA[<p><em>¿Tienes tu propio dominio en Internet y un router en casa?</em> <strong>Este tutorial es para ti</strong>. Más de una vez he querido conectarme al router (o a un computador) en casa desde la oficina; con la molestia de tener que aprenderme el <strong>número mágico</strong> ya que mi proveedor de servicios no ofrece direcciones IP fijas y ademas que cambia estas constantemente, por lo cual es necesario usar algún servicio <a href="http://es.wikipedia.org/wiki/DNS_din%C3%A1mico">DDNS</a> y consecuentemente tener otro equipo encendido en casa que lo ejecute&hellip; <strong>hasta hoy</strong></p>
+
+<!--more-->
+
+
+<p><a href="http://es.wikipedia.org/wiki/DD-WRT">DD-WRT</a> es un firmware <strong>libre</strong> para diversos ruteadores inalámbricos, necesitas tenerlo instalado para seguir este tutorial, aunque <a href="http://www.polarcloud.com/tomato">Tomato</a> puede servir. También debes tener un dominio configurado con una cuenta en <a href="http://freedns.afraid.org/">FreeDNS</a>, sin embargo DD-WRT permite configurar otros servicios como DynDNS, ZoneEdit, NO-IP.com entre otros.</p>
+
+<p><strong>Los pasos a seguir son:</strong></p>
+
+<ol>
+<li>Crear un subdominio en FreeDNS</li>
+<li>Suministrar los datos de conexión al router</li>
+<li>Guardar/Reiniciar el router</li>
+</ol>
+
+
+<h3>Creando un subdominio en FreeDNS</h3>
+
+<p>Entramos con nuestra cuenta en FreeDNS, nos vamos a la sección <strong>Domains</strong>, seleccionamos el enlace <code>[ Manage ]</code> del dominio donde queremos trabajar y finalmente el enlace <code>[ add ]</code>. Escoges un subdominio Tipo A. Escribe el nombre del subdominio que desees en la sección <strong>Subdomain</strong>, por ejemplo: <em>router</em>, indicas la dirección IP actual del router en <strong>Destination</strong>, si no la sabes <a href="http://whatismyipaddress.com/">acá</a> la encontraras con el servicio <strong>What is my IP Address</strong>. Finalmente presionas el botón <strong>Save!</strong>.</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-free-dns-afraid-sub-domain.png">https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-free-dns-afraid-sub-domain.png</a>"></p>
+
+<h3>Configurando el router</h3>
+
+<p>Nos vamos a la página principal de configuración del router, <em>generalmente en 192.168.1.1</em>; en la sección <strong>Setup</strong> y la pestaña <strong>DDNS</strong> escogemos el <em>DDNS Service</em> que vamos a configurar, que para nuestro caso es <code>freedns.afraid.org</code> junto con las credenciales del mismo, así mismo le indicamos el <strong>hostname</strong> que es el nombre del subdominio creado anteriormente. Por último le indicamos el intervalo de actualización en días; si tu ISP cambia constantemente la dirección IP, te sugiero quitar el valor por defecto y colocar <strong>1 (uno)</strong>.</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-dd-wrt-setup-ddns.png">https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-dd-wrt-setup-ddns.png</a>"></p>
+
+<h3>Guardar/Reiniciar</h3>
+
+<p>En la parte inferior de la página está el botón <strong>Save</strong>, lo presionas y solo queda esperar unos segundos mientras el router se conecta al servicio y actualiza la información tal como se muestra en la imagen superior. <em>Excelente!</em> con esto solo tendras que ingresar el nombre del subdominio configurado en el navegador y desde cualquier lugar podras acceder a tu router remotamente. Espero les haya gustado este tutorial en redes y si tienes alguna duda o sugerencia, deja tus comentarios.</p>
+
+<p><strong>Happy Hacking!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Realizando vectores SVG con Javascript en 3 pasos]]></title>

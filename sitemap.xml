@@ -37,8 +37,14 @@
         <lastmod>2013-09-06T09:57:18-04:30</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/
+        </loc>
+        <lastmod>2013-09-11T09:11:10-04:30</lastmod>
+    </url>
+    <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-09-06T09:57:18-04:30</lastmod>
+        <lastmod>2013-09-11T09:11:10-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
@@ -46,6 +52,6 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/archives/</loc>
-        <lastmod>2013-09-06T09:57:18-04:30</lastmod>
+        <lastmod>2013-09-11T09:11:10-04:30</lastmod>
     </url>
 </urlset>

@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Convertir un arreglo Javascript a CSV - Jinme - Compartiendo ideas libres</title>
+  <title>Subdominio para tu router con DD-WRT en 3 pasos - Jinme - Compartiendo ideas libres</title>
   <meta name="author" content="Jinme">
 
   
-  <meta name="description" content="Truco para convertir un arreglo a formato CSV" />
+  <meta name="description" content="Configurando FreeDNS para configurar subdominio para el router" />
 
   
-  <meta name="keywords" content="javascript, array, tricks, CSV" />
+  <meta name="keywords" content="networking, dd-wrt, freedns, router, wifi" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv">
+  <link rel="canonical" href="http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -105,7 +105,7 @@
 
   <header>
   <div class="jumbotron">
-    Convertir Un Arreglo Javascript a CSV
+    Subdominio Para Tu Router Con DD-WRT en 3 Pasos
 	<h5>
 
 
@@ -118,60 +118,44 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2013-09-06T09:13:00-04:30" pubdate data-updated="true">Sep 06, 2013</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2013-09-11T07:30:00-04:30" pubdate data-updated="true">Sep 11, 2013</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Los archivos <a href="http://es.wikipedia.org/wiki/CSV">CSV</a> básicamente poseen un <strong>formato abierto</strong> que permite de manera sencilla el intercambio de información organizado tabularmente. Tal como se muestra en el ejemplo.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>987,juan,87345,10 norte 342
-</span><span class='line'>876,pedro,43649,8 oriente 342
-</span><span class='line'>123,jorge,03342,av. libertad 23
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>A continuación explico como <strong>convertir los datos de un arreglo</strong> a este formato.</p>
+      <p><em>¿Tienes tu propio dominio en Internet y un router en casa?</em> <strong>Este tutorial es para ti</strong>. Más de una vez he querido conectarme al router (o a un computador) en casa desde la oficina; con la molestia de tener que aprenderme el <strong>número mágico</strong> ya que mi proveedor de servicios no ofrece direcciones IP fijas y ademas que cambia estas constantemente, por lo cual es necesario usar algún servicio <a href="http://es.wikipedia.org/wiki/DNS_din%C3%A1mico">DDNS</a> y consecuentemente tener otro equipo encendido en casa que lo ejecute&hellip; <strong>hasta hoy</strong></p>
 
 <!--more-->
 
 
-<p>Primeramente mostramos la información de un arreglo usando la función <code>valueOf()</code></p>
+<p><a href="http://es.wikipedia.org/wiki/DD-WRT">DD-WRT</a> es un firmware <strong>libre</strong> para diversos ruteadores inalámbricos, necesitas tenerlo instalado para seguir este tutorial, aunque <a href="http://www.polarcloud.com/tomato">Tomato</a> puede servir. También debes tener un dominio configurado con una cuenta en <a href="http://freedns.afraid.org/">FreeDNS</a>, sin embargo DD-WRT permite configurar otros servicios como DynDNS, ZoneEdit, NO-IP.com entre otros.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//print str: manzana,duraznos,naranjas,mangos</span>
-</span></code></pre></td></tr></table></div></figure>
+<p><strong>Los pasos a seguir son:</strong></p>
+
+<ol>
+<li>Crear un subdominio en FreeDNS</li>
+<li>Suministrar los datos de conexión al router</li>
+<li>Guardar/Reiniciar el router</li>
+</ol>
 
 
-<p>Como vemos el método convierte un arreglo javascript a un <em>string</em> usando la coma como separador, suficiente para compartirlo en un archivo CSV.</p>
+<h3>Creando un subdominio en FreeDNS</h3>
 
-<p>Ahora bien, si queremos usar el <em>pipe</em> <strong>(|)</strong> como separador, valido para el CSV; usaremos el método <code>join()</code></p>
+<p>Entramos con nuestra cuenta en FreeDNS, nos vamos a la sección <strong>Domains</strong>, seleccionamos el enlace <code>[ Manage ]</code> del dominio donde queremos trabajar y finalmente el enlace <code>[ add ]</code>. Escoges un subdominio Tipo A. Escribe el nombre del subdominio que desees en la sección <strong>Subdomain</strong>, por ejemplo: <em>router</em>, indicas la dirección IP actual del router en <strong>Destination</strong>, si no la sabes <a href="http://whatismyipaddress.com/">acá</a> la encontraras con el servicio <strong>What is my IP Address</strong>. Finalmente presionas el botón <strong>Save!</strong>.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;duraznos&#39;</span><span class="p">,</span> <span class="s1">&#39;naranjas&#39;</span><span class="p">,</span> <span class="s1">&#39;mangos&#39;</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//print str: manzana|duraznos|naranjas|mangos</span>
-</span></code></pre></td></tr></table></div></figure>
+<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-free-dns-afraid-sub-domain.png"></p>
 
+<h3>Configurando el router</h3>
 
-<p><strong>¿Interesante, no?</strong> espero en el futuro ir publicando más trucos en el blog, <em>siempre necesarios.</em> Deja tus comentarios si tienes algún <em>snippet</em> en particular.</p>
+<p>Nos vamos a la página principal de configuración del router, <em>generalmente en 192.168.1.1</em>; en la sección <strong>Setup</strong> y la pestaña <strong>DDNS</strong> escogemos el <em>DDNS Service</em> que vamos a configurar, que para nuestro caso es <code>freedns.afraid.org</code> junto con las credenciales del mismo, así mismo le indicamos el <strong>hostname</strong> que es el nombre del subdominio creado anteriormente. Por último le indicamos el intervalo de actualización en días; si tu ISP cambia constantemente la dirección IP, te sugiero quitar el valor por defecto y colocar <strong>1 (uno)</strong>.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-dd-wrt-setup-ddns.png"></p>
+
+<h3>Guardar/Reiniciar</h3>
+
+<p>En la parte inferior de la página está el botón <strong>Save</strong>, lo presionas y solo queda esperar unos segundos mientras el router se conecta al servicio y actualiza la información tal como se muestra en la imagen superior. <em>Excelente!</em> con esto solo tendras que ingresar el nombre del subdominio configurado en el navegador y desde cualquier lugar podras acceder a tu router remotamente. Espero les haya gustado este tutorial en redes y si tienes alguna duda o sugerencia, deja tus comentarios.</p>
+
+<p><strong>Happy Hacking!</strong></p>
 
     </div>
   </div>
@@ -190,13 +174,13 @@
 
 
 
-  <a href="/categories/array/"><span class="badge">array</span></a>
+  <a href="/categories/3-pasos/"><span class="badge">3-pasos</span></a>
 
-  <a href="/categories/csv/"><span class="badge">csv</span></a>
+  <a href="/categories/dd-wrt/"><span class="badge">dd-wrt</span></a>
 
-  <a href="/categories/javascript/"><span class="badge">javascript</span></a>
+  <a href="/categories/redes/"><span class="badge">redes</span></a>
 
-  <a href="/categories/trucos/"><span class="badge">trucos</span></a>
+  <a href="/categories/wifi/"><span class="badge">wifi</span></a>
 
 
 
@@ -226,10 +210,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/2013/08/27/como-saber-si-un-objeto-json-esta-vacio/" title="Previous Post: Cómo saber si un objeto JSON está vacío">&laquo; Cómo saber si un objeto JSON está vacío</a>
+            <a class="basic-alignment left" href="/2013/09/06/convertir-un-arreglo-javascript-a-csv/" title="Previous Post: Convertir un arreglo Javascript a CSV">&laquo; Convertir un arreglo Javascript a CSV</a>
           
-          
-            <a class="basic-alignment right" href="/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/" title="Next Post: Subdominio para tu router con DD-WRT en 3 pasos">Subdominio para tu router con DD-WRT en 3 pasos &raquo;</a>
           
         </p>
       </div>
@@ -268,8 +250,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/';
-        var disqus_url = 'http://blog.jinme.org/2013/09/06/convertir-un-arreglo-javascript-a-csv/';
+        var disqus_identifier = 'http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/';
+        var disqus_url = 'http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/';
         var disqus_script = 'embed.js';
       
     (function () {
