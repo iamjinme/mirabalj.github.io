@@ -43,8 +43,14 @@
         <lastmod>2013-09-11T09:11:10-04:30</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome/
+        </loc>
+        <lastmod>2013-09-12T10:38:19-04:30</lastmod>
+    </url>
+    <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-09-11T09:11:10-04:30</lastmod>
+        <lastmod>2013-09-12T10:38:19-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
@@ -52,6 +58,6 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/archives/</loc>
-        <lastmod>2013-09-11T09:11:10-04:30</lastmod>
+        <lastmod>2013-09-12T10:38:19-04:30</lastmod>
     </url>
 </urlset>

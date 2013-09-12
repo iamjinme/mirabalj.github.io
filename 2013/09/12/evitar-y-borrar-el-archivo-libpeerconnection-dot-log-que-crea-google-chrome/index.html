@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Subdominio para tu router con DD-WRT en 3 pasos - Jinme - Compartiendo ideas libres</title>
+  <title>Evitar y borrar el archivo libpeerconnection.log que crea Google Chrome - Jinme - Compartiendo ideas libres</title>
   <meta name="author" content="Jinme">
 
   
-  <meta name="description" content="Configurando FreeDNS para configurar subdominio para el router" />
+  <meta name="description" content="Truco para evitar archivo fantasma de Google Chrome" />
 
   
-  <meta name="keywords" content="networking, dd-wrt, freedns, router, wifi" />
+  <meta name="keywords" content="console, chrome, gnu, linux, libpeerconnection, google, debian" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos">
+  <link rel="canonical" href="http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -105,7 +105,7 @@
 
   <header>
   <div class="jumbotron">
-    Subdominio Para Tu Router Con DD-WRT en 3 Pasos
+    Evitar Y Borrar El Archivo libpeerconnection.log Que Crea Google Chrome
 	<h5>
 
 
@@ -118,44 +118,60 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2013-09-11T07:30:00-04:30" pubdate data-updated="true">Sep 11, 2013</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2013-09-12T10:08:00-04:30" pubdate data-updated="true">Sep 12, 2013</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p><em>¿Tienes tu propio dominio en Internet y un router en casa?</em> <strong>Este tutorial es para ti</strong>. Más de una vez he querido conectarme al router (o a un computador) en casa desde la oficina; con la molestia de tener que aprenderme el <strong>número mágico</strong> ya que mi proveedor de servicios no ofrece direcciones IP fijas y ademas que cambia estas constantemente, por lo cual es necesario usar algún servicio <a href="http://es.wikipedia.org/wiki/DNS_din%C3%A1mico">DDNS</a> y consecuentemente tener otro equipo encendido en casa que lo ejecute&hellip; <strong>hasta hoy</strong></p>
+      <p>Hace unos días me percaté de un archivo <em>fantasma:</em> <code>libpeerconnection.log</code> que aparece en distintos directorios del disco duro donde tengo instalado Crunchbang, si lo borras vuelve a aparecer sobre todo en el $HOME. Investigando di con el <strong>culpable: Google Chrome</strong>. Acá te dejo la solución.</p>
 
 <!--more-->
 
 
-<p><a href="http://es.wikipedia.org/wiki/DD-WRT">DD-WRT</a> es un firmware <strong>libre</strong> para diversos ruteadores inalámbricos, necesitas tenerlo instalado para seguir este tutorial, aunque <a href="http://www.polarcloud.com/tomato">Tomato</a> puede servir. También debes tener un dominio configurado con una cuenta en <a href="http://freedns.afraid.org/">FreeDNS</a>, sin embargo DD-WRT permite configurar otros servicios como DynDNS, ZoneEdit, NO-IP.com entre otros.</p>
+<p>Lo primero es abrir la consola <em>(o terminal)</em> del sistema y ejecutar <code>sudo nano /opt/google/chrome/google-chrome</code> o usar tu editor favorito: gedit, geany, vi <em>(sustituyendo a nano)</em>. Luego nos vamos al final del archivo que estamos editando, donde están las siguientes lineas:</p>
 
-<p><strong>Los pasos a seguir son:</strong></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">CHROME_VERSION_EXTRA</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># We don&#39;t want bug-buddy intercepting our crashes. http://crbug.com/24120</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">GNOME_DISABLE_CRASH_DIALOG</span><span class="o">=</span>SET_BY_GOOGLE_CHROME
+</span><span class='line'>
+</span><span class='line'><span class="nb">exec</span> -a <span class="s2">&quot;$0&quot;</span> <span class="s2">&quot;$HERE/chrome&quot;</span>  <span class="s2">&quot;$@&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<ol>
-<li>Crear un subdominio en FreeDNS</li>
-<li>Suministrar los datos de conexión al router</li>
-<li>Guardar/Reiniciar el router</li>
-</ol>
+
+<p>Antes del comando <code>exec</code> escribimos <code>cd /tmp</code>, con lo cual Chrome creará en adelante el archivo en el directorio temporal de nuestra distribución. Quedaría algo como esto:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">CHROME_VERSION_EXTRA</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># We don&#39;t want bug-buddy intercepting our crashes. http://crbug.com/24120</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">GNOME_DISABLE_CRASH_DIALOG</span><span class="o">=</span>SET_BY_GOOGLE_CHROME
+</span><span class='line'>
+</span><span class='line'><span class="nb">cd</span> /tmp
+</span><span class='line'><span class="nb">exec</span> -a <span class="s2">&quot;$0&quot;</span> <span class="s2">&quot;$HERE/chrome&quot;</span>  <span class="s2">&quot;$@&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Creando un subdominio en FreeDNS</h3>
+<p>Guardas el archivo <code>Ctrl + O</code>. Luego si deseas borrar todos estos archivos &ldquo;fantasmas&rdquo; en tu disco duro, lo puedes hacer con el siguiente <em>comando</em> en la consola.</p>
 
-<p>Entramos con nuestra cuenta en FreeDNS, nos vamos a la sección <strong>Domains</strong>, seleccionamos el enlace <code>[ Manage ]</code> del dominio donde queremos trabajar y finalmente el enlace <code>[ add ]</code>. Escoges un subdominio Tipo A. Escribe el nombre del subdominio que desees en la sección <strong>Subdomain</strong>, por ejemplo: <em>router</em>, indicas la dirección IP actual del router en <strong>Destination</strong>, si no la sabes <a href="http://whatismyipaddress.com/">acá</a> la encontraras con el servicio <strong>What is my IP Address</strong>. Finalmente presionas el botón <strong>Save!</strong>.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo find -name libpeerconnection.log -exec rm -f <span class="o">{}</span> <span class="se">\;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-free-dns-afraid-sub-domain.png"></p>
 
-<h3>Configurando el router</h3>
-
-<p>Nos vamos a la página principal de configuración del router, <em>generalmente en 192.168.1.1</em>; en la sección <strong>Setup</strong> y la pestaña <strong>DDNS</strong> escogemos el <em>DDNS Service</em> que vamos a configurar, que para nuestro caso es <code>freedns.afraid.org</code> junto con las credenciales del mismo, así mismo le indicamos el <strong>hostname</strong> que es el nombre del subdominio creado anteriormente. Por último le indicamos el intervalo de actualización en días; si tu ISP cambia constantemente la dirección IP, te sugiero quitar el valor por defecto y colocar <strong>1 (uno)</strong>.</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/10635827/cdn/20130911-dd-wrt-setup-ddns.png"></p>
-
-<h3>Guardar/Reiniciar</h3>
-
-<p>En la parte inferior de la página está el botón <strong>Save</strong>, lo presionas y solo queda esperar unos segundos mientras el router se conecta al servicio y actualiza la información tal como se muestra en la imagen superior. <em>Excelente!</em> con esto solo tendras que ingresar el nombre del subdominio configurado en el navegador y desde cualquier lugar podras acceder a tu router remotamente. Espero les haya gustado este tutorial en redes y si tienes alguna duda o sugerencia, deja tus comentarios.</p>
-
-<p><strong>Happy Hacking!</strong></p>
+<p>Con esto me pude librar de esta molestia, espero que tu también. <strong>No olvides dejar tus comentarios.</strong></p>
 
     </div>
   </div>
@@ -174,13 +190,13 @@
 
 
 
-  <a href="/categories/3-pasos/"><span class="badge">3-pasos</span></a>
+  <a href="/categories/chrome/"><span class="badge">chrome</span></a>
 
-  <a href="/categories/dd-wrt/"><span class="badge">dd-wrt</span></a>
+  <a href="/categories/consola/"><span class="badge">consola</span></a>
 
-  <a href="/categories/redes/"><span class="badge">redes</span></a>
+  <a href="/categories/crunchbang/"><span class="badge">crunchbang</span></a>
 
-  <a href="/categories/wifi/"><span class="badge">wifi</span></a>
+  <a href="/categories/linux/"><span class="badge">linux</span></a>
 
 
 
@@ -210,10 +226,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/2013/09/06/convertir-un-arreglo-javascript-a-csv/" title="Previous Post: Convertir un arreglo Javascript a CSV">&laquo; Convertir un arreglo Javascript a CSV</a>
+            <a class="basic-alignment left" href="/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/" title="Previous Post: Subdominio para tu router con DD-WRT en 3 pasos">&laquo; Subdominio para tu router con DD-WRT en 3 pasos</a>
           
-          
-            <a class="basic-alignment right" href="/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome/" title="Next Post: Evitar y borrar el archivo libpeerconnection.log que crea Google Chrome">Evitar y borrar el archivo libpeerconnection.log que crea Google Chrome &raquo;</a>
           
         </p>
       </div>
@@ -252,8 +266,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/';
-        var disqus_url = 'http://blog.jinme.org/2013/09/11/subdominio-para-tu-router-con-dd-wrt-en-3-pasos/';
+        var disqus_identifier = 'http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome/';
+        var disqus_url = 'http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome/';
         var disqus_script = 'embed.js';
       
     (function () {

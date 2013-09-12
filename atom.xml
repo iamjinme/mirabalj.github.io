@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-09-11T09:11:45-04:30</updated>
+  <updated>2013-09-12T10:39:32-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Evitar y borrar el archivo libpeerconnection.log que crea Google Chrome]]></title>
+    <link href="http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome/"/>
+    <updated>2013-09-12T10:08:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/09/12/evitar-y-borrar-el-archivo-libpeerconnection-dot-log-que-crea-google-chrome</id>
+    <content type="html"><![CDATA[<p>Hace unos días me percaté de un archivo <em>fantasma:</em> <code>libpeerconnection.log</code> que aparece en distintos directorios del disco duro donde tengo instalado Crunchbang, si lo borras vuelve a aparecer sobre todo en el $HOME. Investigando di con el <strong>culpable: Google Chrome</strong>. Acá te dejo la solución.</p>
+
+<!--more-->
+
+
+<p>Lo primero es abrir la consola <em>(o terminal)</em> del sistema y ejecutar <code>sudo nano /opt/google/chrome/google-chrome</code> o usar tu editor favorito: gedit, geany, vi <em>(sustituyendo a nano)</em>. Luego nos vamos al final del archivo que estamos editando, donde están las siguientes lineas:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">CHROME_VERSION_EXTRA</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># We don&#39;t want bug-buddy intercepting our crashes. http://crbug.com/24120</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">GNOME_DISABLE_CRASH_DIALOG</span><span class="o">=</span>SET_BY_GOOGLE_CHROME
+</span><span class='line'>
+</span><span class='line'><span class="nb">exec</span> -a <span class="s2">&quot;$0&quot;</span> <span class="s2">&quot;$HERE/chrome&quot;</span>  <span class="s2">&quot;$@&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Antes del comando <code>exec</code> escribimos <code>cd /tmp</code>, con lo cual Chrome creará en adelante el archivo en el directorio temporal de nuestra distribución. Quedaría algo como esto:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">CHROME_VERSION_EXTRA</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># We don&#39;t want bug-buddy intercepting our crashes. http://crbug.com/24120</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">GNOME_DISABLE_CRASH_DIALOG</span><span class="o">=</span>SET_BY_GOOGLE_CHROME
+</span><span class='line'>
+</span><span class='line'><span class="nb">cd</span> /tmp
+</span><span class='line'><span class="nb">exec</span> -a <span class="s2">&quot;$0&quot;</span> <span class="s2">&quot;$HERE/chrome&quot;</span>  <span class="s2">&quot;$@&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Guardas el archivo <code>Ctrl + O</code>. Luego si deseas borrar todos estos archivos &ldquo;fantasmas&rdquo; en tu disco duro, lo puedes hacer con el siguiente <em>comando</em> en la consola.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo find -name libpeerconnection.log -exec rm -f <span class="o">{}</span> <span class="se">\;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Con esto me pude librar de esta molestia, espero que tu también. <strong>No olvides dejar tus comentarios.</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Subdominio para tu router con DD-WRT en 3 pasos]]></title>
