@@ -4,7 +4,7 @@
   <title><![CDATA[Jinme - Compartiendo ideas libres]]></title>
   <link href="http://blog.jinme.org/atom.xml" rel="self"/>
   <link href="http://blog.jinme.org/"/>
-  <updated>2013-09-12T10:39:32-04:30</updated>
+  <updated>2013-09-21T09:30:32-04:30</updated>
   <id>http://blog.jinme.org/</id>
   <author>
     <name><![CDATA[Jinme]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Seguridad en el cliente Web de OpenERP]]></title>
+    <link href="http://blog.jinme.org/2013/09/21/seguridad-en-el-cliente-web-de-openerp/"/>
+    <updated>2013-09-21T08:39:00-04:30</updated>
+    <id>http://blog.jinme.org/2013/09/21/seguridad-en-el-cliente-web-de-openerp</id>
+    <content type="html"><![CDATA[<p>Manejar la información de una empresa usando un sistema de planificación de recursos <em>(ERP)</em> a través de un cliente Web es una excelente opción para cualquier organización moderna, sin embargo asegurar los datos debería ser una <strong>prioridad</strong>. Si provees <a href="https://www.openerp.com/">OpenERP</a> como solución tecnológica en producción, te sugiero tomar en cuenta las siguientes recomendaciones.</p>
+
+<!--more-->
+
+
+<h3>Usa HTTPS</h3>
+
+<p>Siempre puedes usar XML-RPC a través de HTTPS para cifrar todas las comunicaciones. Por defecto OpenERP funciona simplemente con HTTP. En detrimento del rendimiento deberías activar esta opción.</p>
+
+<h3>A través de una VPN</h3>
+
+<p>Es deseable usar OpenERP sobre una <a href="http://www.cwv.com.ve/?p=15259">red privada virtual</a>. Esto eliminará a curiosos foráneos que quieran obtener acceso al sistema. Esto se puede hacer mediante la configuración del servidor Apache para aceptar sólo conexiones de una dirección IP específica de la oficina.</p>
+
+<h3>SSH como alternativa</h3>
+
+<p>Si no estas usando VPN o HTTPS, otra opción es crear un <em>túnel</em> SSH.</p>
+
+<h3>Instalar el modulo base_crypt</h3>
+
+<p>Por defecto las contraseñas y usuarios son guardados en <em>texto plano</em>. Es muy importante almacenarlos en forma cifrada. Instala el modulo base_crypt para lograrlo.</p>
+
+<h3>Usa Active Directory/LDAP</h3>
+
+<p>Para asegurar aún mas el sistema, es aconsejable utilizar Active Directory/LDAP; hay un modulo existente que permite hacer esto.</p>
+
+<h3>Incluye un archivo Robot.txt</h3>
+
+<p>Para terminar de blindar tu sistema crea un archivo <code>Robot.txt</code> en la raíz del cliente Web para no dejar que Google indexe tu página de inicio.</p>
+
+<p>Recuerda que no es una solución definitiva, es un trabajo en progreso donde te invito a dejar tus comentarios y sugerencias. Ah! y <strong>Feliz día del Software Libre</strong>.</p>
+
+<p>Esta es una <em>traducción libre</em> del <a href="http://pragtechblog.blogspot.com/2012/04/securing-openerp-web-client-security.html">artículo</a> de Pragmatic: Securing OpenERP Web Client (Security OpenERP).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Evitar y borrar el archivo libpeerconnection.log que crea Google Chrome]]></title>

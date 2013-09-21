@@ -49,8 +49,12 @@
         <lastmod>2013-09-12T10:38:19-04:30</lastmod>
     </url>
     <url>
+        <loc>http://blog.jinme.org/2013/09/21/seguridad-en-el-cliente-web-de-openerp/</loc>
+        <lastmod>2013-09-21T09:29:28-04:30</lastmod>
+    </url>
+    <url>
         <loc>http://blog.jinme.org/</loc>
-        <lastmod>2013-09-12T10:38:19-04:30</lastmod>
+        <lastmod>2013-09-21T09:29:28-04:30</lastmod>
     </url>
     <url>
         <loc>http://blog.jinme.org/robots.txt</loc>
@@ -58,6 +62,6 @@
     </url>
     <url>
         <loc>http://blog.jinme.org/archives/</loc>
-        <lastmod>2013-09-12T10:38:19-04:30</lastmod>
+        <lastmod>2013-09-21T09:29:28-04:30</lastmod>
     </url>
 </urlset>
